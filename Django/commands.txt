@@ -1,0 +1,1 @@
+coverage run --source 'C:\Users\Xelid\Desktop\Proyectos\React-Django-API-Blog\Django' manage.py test

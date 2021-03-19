@@ -25,7 +25,6 @@ SECRET_KEY = '*$cv*lp5kv7@xmx8%5-8@*b!mr(4&oi=%9-ggc(vb-^m+h(=(c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,17 +40,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Apps
-    'apps.api',
     'apps.blog',
 
     # API
+    'apps.api',
     'rest_framework',
+
+    # Third party
+    'corsheaders',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -60,6 +63,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'djangoApi.urls'
+
+ALLOWED_HOSTS = []
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
 
 TEMPLATES = [
     {
