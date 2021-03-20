@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
-        borderBottom: `1px solid $(theme.palette.divider)`
+        borderBottom: `1px solid ${theme.palette.divider}`
     }
 }))
 
@@ -24,12 +24,13 @@ export const Header = () => {
                 color='white'
                 elevation={0}
                 className={classes.appBar}
-            />
-            <Toolbar>
-                <Typography variant='h6' color='inherit' noWrap>
-                    BlogmeUp
-                </Typography>
-            </Toolbar>
+            >
+                <Toolbar>
+                    <Typography variant='h6' color='inherit' noWrap>
+                        BlogmeUp
+                    </Typography>
+                </Toolbar>
+            </AppBar>
         </Fragment>
     )
 }
